@@ -49,3 +49,37 @@ function App() {
 
 export default App;
 ```
+### Más ejemplos componente
+#### Componente Button:
+```
+import './Button.css';
+
+const Button = (props) => {
+    return (
+        <button {...props} className='btn' />
+    )
+    
+}
+
+export default Button
+```
+Al desestructurar las props en la etiqueta button, esta recibe los eventos y las propiedades pasadas al componente que la contiene.
+#### Componente App (importa Button)
+```
+import Button from './Button';  // importación componente
+
+function App() {  
+  return ( 
+    <div>
+      <h1>Holiwi</h1>
+      <Button onClick={()=> console.log('click')}>  
+        Enviar
+      </Button>      
+    </div>
+  );
+}
+
+export default App;
+```
+
+

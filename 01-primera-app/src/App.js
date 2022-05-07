@@ -1,30 +1,27 @@
-import './App.css';  // se pueden importar ficheros de estilos
+import Button from './Button';  // importación componente
 
-function App() {
-  // Estilo inline (utiliza las propiedades de css de javascript)
-  // En lugar de kebab-kase utiliza lowerCamelCase (background-color => backgroundColor)
-  const estiloLi = {
-    backgroundColor: '#990000',
-    color: 'white',
-    padding: '5px',
-    margin: '10px 5px'
-  }
-  const sombra = {
-    boxShadow: '10px 5px 5px black'
-  }
+function App() {  
+  const arr = [
+    'Luis',
+    'Cris',
+    'Sara'
+  ];
+  let miVariable = false;
 
-  const Li = ({children, estado}) => { // Componente, children es el contenido entre etiquetas.
+  if (miVariable) {
     return (
-      <li style={{...estiloLi, ...sombra}}>{children} - {estado}</li>
+      <p> Mi variable es true</p>
     )
   }
-  const valor = 'Kiwi';
 
-  return ( // Un componente puede devolver código JSX que será renderizado
-    <ul className='clase-ul'>
-      <Li estado={'Listo'}>Holiwi {valor}</Li>
-      <Li estado={'Pendiente'}>Holiwiwi {valor}</Li>
-    </ul>    
+  return ( 
+    <div>
+      <h1>Holiwi</h1>
+      {arr.map(el => <p key={el}>{el}</p>)}
+      <Button onClick={()=> miVariable = false}>  
+        Enviar
+      </Button>      
+    </div>
   );
 }
 
